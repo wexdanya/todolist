@@ -1,0 +1,97 @@
+@use "/src/common/breakpoints" as *;
+@use "/src/common/colors" as *;
+.wrapper {
+  width: 300px;
+  height: 50px;
+  margin: 1.2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
+  transition: opacity 0.3s ease;
+  .task {
+    width: 80%;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    background-color: $white;
+    list-style: none;
+    word-wrap: break-word;
+    overflow-x: hidden;
+    .text {
+      max-width: 80%;
+    }
+  }
+  .isDone {
+    cursor: pointer;
+    height: 100%;
+    padding: 0.3rem 0.6rem;
+    opacity: 85%;
+
+    transition:  opacity 0.3s ease;
+
+    background-color: $blue;
+    &:hover {
+      opacity: 100%;
+    }
+    & * {
+      margin-top: 7px;
+    }
+  }
+  .delete {
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0);
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    background-color: $darkPurple;
+    color: $white;
+    transition:  opacity 0.3s ease;
+    &:hover {
+      opacity: 90%;
+    }
+    & * {
+      margin-top: 3px;
+    }
+  }
+}
+.done {
+  opacity: 50%;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 71%;
+    background-color: black;
+    opacity: 100%;
+  }
+}
+
+@media (min-width: $small) {
+  .wrapper {
+    width: 400px;
+    height: 60px;
+    .task {
+      padding-left: 25px;
+    }
+    .delete {
+      padding: 0.3rem 1rem;
+      & * {
+        margin-top: 3px;
+      }
+    }
+    .isDone {
+      padding: 0.3rem 0.9rem;
+      & * {
+        margin-top: 11.5px;
+      }
+    }
+  }
+  .done {
+    &::before {
+      width: 72.5%;
+    }
+  }
+}

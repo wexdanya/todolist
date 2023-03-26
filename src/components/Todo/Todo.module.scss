@@ -1,0 +1,24 @@
+@use "/src/common/breakpoints" as *;
+
+.wrapper {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    padding: 2rem 0;
+
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+@media (min-width: $small) {
+  .wrapper {
+    .title {
+      font-size: 48px;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.link{
+    margin-right: 15px;
+    cursor: pointer;
+    &:hover{
+        opacity: 70%;
+    }
+}
+.active{
+    text-decoration: underline;
+}

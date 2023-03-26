@@ -1,0 +1,63 @@
+@use "/src/common/colors" as *;
+@use "/src/common/breakpoints" as *;
+.wrapper {
+  padding: 2rem;
+  position: relative;
+  .input {
+    width: 300px;
+    padding: 15px 15px;
+    border: 2px solid rgba(255, 0, 0, 0);
+    font-size: 16px;
+    outline: none;
+  }
+  .errorInput {
+    border: 2px solid red;
+  }
+  .errorMessage {
+    font-size: 13px;
+    position: absolute;
+    width: 82.3%;
+    padding: 1px 15px;
+    background-color: #dd153d;
+    bottom: 13%;
+    left: 9%;
+    color: white;
+  }
+  .button {
+    padding: 0 7px;
+    border: none;
+    border-radius: 5px;
+    background-color: $darkPurple;
+    color: $white;
+    font-size: 25px;
+    position: absolute;
+    right: 13%;
+    top: 37%;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    &:hover {
+      opacity: 80%;
+    }
+  }
+}
+
+@media (min-width: $small) {
+  .wrapper {
+    .input {
+      width: 400px;
+      padding: 20px 30px;
+      font-size: 18px;
+    }
+    .errorMessage {
+      width: 86.2%;
+      background-color: #dd153d;
+      bottom: 11.5%;
+      left: 7%;
+      color: white;
+    }
+    .button {
+      padding: 4px 11px;
+      top: 34%;
+    }
+  }
+}
